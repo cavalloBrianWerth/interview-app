@@ -15,7 +15,7 @@ export class OrdersService {
     return this.http.get<Order[]>(this.baseUrl);
   }
 
-  getOrder(id: string): Observable<Order> {
+  getOrder(id: number): Observable<Order> {
     return this.http.get<Order>(`${this.baseUrl}/${id}`);
   }
 
@@ -23,11 +23,11 @@ export class OrdersService {
     return this.http.post<Order>(this.baseUrl, order);
   }
 
-  updateOrder(id: string, order: Partial<Order>): Observable<Order> {
+  updateOrder(id: number, order: Partial<Order>): Observable<Order> {
     return this.http.put<Order>(`${this.baseUrl}/${id}`, order);
   }
 
-  deleteOrder(id: string): Observable<void> {
+  deleteOrder(id: number): Observable<void> {
     return this.http.delete<void>(`${this.baseUrl}/${id}`);
   }
 }
